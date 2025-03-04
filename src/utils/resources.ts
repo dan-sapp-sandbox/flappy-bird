@@ -4,7 +4,6 @@ import * as ex from "excalibur";
 
 export const Resources = {
   // Images
-  BirdImage: new ex.ImageSource("/flappy-bird/images/bird-4.png"),
   HelicopterImage1: new ex.ImageSource(
     "/flappy-bird/images/helicopter/helicopter_1.png",
   ),
@@ -29,9 +28,12 @@ export const Resources = {
   HelicopterImage8: new ex.ImageSource(
     "/flappy-bird/images/helicopter/helicopter_8.png",
   ),
-  PipeImage: new ex.ImageSource("/flappy-bird/images/brick2.png", {
-    wrapping: ex.ImageWrapping.Repeat,
-  }),
+  PipeImage: new ex.ImageSource(
+    "/flappy-bird/images/brick2.png",
+    {
+      wrapping: ex.ImageWrapping.Repeat,
+    },
+  ),
   GroundImage: new ex.ImageSource(
     "/flappy-bird/images/ground.png",
     {
@@ -45,7 +47,5 @@ export const Resources = {
   ScoreSound: new ex.Sound("/flappy-bird/sounds/hit.mp3"),
 
   // Music
-  BackgroundMusic: new ex.Sound(
-    "/flappy-bird/sounds/song.mp3",
-  ),
+  BackgroundMusic: new ex.Sound("/flappy-bird/sounds/song.mp3"),
 } as const;
