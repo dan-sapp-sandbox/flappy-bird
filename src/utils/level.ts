@@ -27,8 +27,8 @@ export class Level extends ex.Scene {
 
   scoreLabel = new ex.Label({
     text: "Score: 0",
-    x: 0,
-    y: 0,
+    x: 10,
+    y: 10,
     z: 2,
     font: new ex.Font({
       size: 20,
@@ -38,8 +38,8 @@ export class Level extends ex.Scene {
 
   bestLabel = new ex.Label({
     text: "Best: 0",
-    x: 400,
-    y: 0,
+    x: 390,
+    y: 10,
     z: 2,
     font: new ex.Font({
       size: 20,
