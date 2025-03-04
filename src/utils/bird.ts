@@ -24,29 +24,119 @@ export class Bird extends ex.Actor {
   }
 
   override onInitialize(): void {
-    const spriteSheet = ex.SpriteSheet.fromImageSource({
-      image: Resources.BirdImage,
-      grid: {
-        rows: 1,
-        columns: 4,
-        spriteWidth: 32,
-        spriteHeight: 32,
+    this.startSprite = new ex.Sprite({
+      image: Resources.HelicopterImage1,
+      sourceView: {
+        x: 0,
+        y: 0,
+        width: 120,
+        height: 32,
       },
     });
-
-    this.startSprite = spriteSheet.getSprite(0, 0);
-    this.upAnimation = ex.Animation.fromSpriteSheet(
-      spriteSheet,
-      [0, 0, 0],
-      150,
-      ex.AnimationStrategy.Freeze,
-    );
-    this.downAnimation = ex.Animation.fromSpriteSheet(
-      spriteSheet,
-      [0, 0, 0],
-      150,
-      ex.AnimationStrategy.Freeze,
-    );
+    this.upAnimation = new ex.Animation({
+      frames: [
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage1,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 15,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage2,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 15,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage3,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 15,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage4,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 15,
+        },
+      ],
+    });
+    this.downAnimation = new ex.Animation({
+      frames: [
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage1,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 30,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage2,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 30,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage3,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 30,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage4,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 30,
+        },
+      ],
+    });
 
     // Register
     this.graphics.add("down", this.downAnimation);
@@ -91,7 +181,7 @@ export class Bird extends ex.Actor {
     );
 
     // The "speed" the bird will move relative to pipes
-    this.rotation = ex.vec(Config.PipeSpeed, this.vel.y).toAngle();
+    this.rotation = ex.vec(Config.PipeSpeed, this.vel.y / 4).toAngle();
 
     if (this.vel.y > 0) {
       this.graphics.use("down");
