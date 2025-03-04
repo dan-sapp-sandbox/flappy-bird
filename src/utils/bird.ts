@@ -45,7 +45,7 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 15,
+          duration: 10,
         },
         {
           graphic: new ex.Sprite({
@@ -57,7 +57,7 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 15,
+          duration: 10,
         },
         {
           graphic: new ex.Sprite({
@@ -69,7 +69,7 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 15,
+          duration: 10,
         },
         {
           graphic: new ex.Sprite({
@@ -81,7 +81,55 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 15,
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage5,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage6,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage7,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage8,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
         },
       ],
     });
@@ -97,7 +145,7 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 30,
+          duration: 10,
         },
         {
           graphic: new ex.Sprite({
@@ -109,7 +157,7 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 30,
+          duration: 10,
         },
         {
           graphic: new ex.Sprite({
@@ -121,7 +169,7 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 30,
+          duration: 10,
         },
         {
           graphic: new ex.Sprite({
@@ -133,7 +181,55 @@ export class Bird extends ex.Actor {
               height: 32,
             },
           }),
-          duration: 30,
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage5,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage6,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage7,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
+        },
+        {
+          graphic: new ex.Sprite({
+            image: Resources.HelicopterImage8,
+            sourceView: {
+              x: 0,
+              y: 0,
+              width: 120,
+              height: 32,
+            },
+          }),
+          duration: 10,
         },
       ],
     });
@@ -181,7 +277,7 @@ export class Bird extends ex.Actor {
     );
 
     // The "speed" the bird will move relative to pipes
-    this.rotation = ex.vec(Config.PipeSpeed, this.vel.y / 4).toAngle();
+    this.rotation = ex.vec(Config.PipeSpeed, this.vel.y / 5).toAngle();
 
     if (this.vel.y > 0) {
       this.graphics.use("down");

@@ -17,8 +17,20 @@ export const Resources = {
   HelicopterImage4: new ex.ImageSource(
     "/flappy-bird/images/helicopter/helicopter_4.png",
   ),
-  PipeImage: new ex.ImageSource("/flappy-bird/images/pipe.png", {
-    wrapping: ex.ImageWrapping.Clamp, // Clamp is the default
+  HelicopterImage5: new ex.ImageSource(
+    "/flappy-bird/images/helicopter/helicopter_5.png",
+  ),
+  HelicopterImage6: new ex.ImageSource(
+    "/flappy-bird/images/helicopter/helicopter_6.png",
+  ),
+  HelicopterImage7: new ex.ImageSource(
+    "/flappy-bird/images/helicopter/helicopter_7.png",
+  ),
+  HelicopterImage8: new ex.ImageSource(
+    "/flappy-bird/images/helicopter/helicopter_8.png",
+  ),
+  PipeImage: new ex.ImageSource("/flappy-bird/images/brick2.png", {
+    wrapping: ex.ImageWrapping.Repeat,
   }),
   GroundImage: new ex.ImageSource(
     "/flappy-bird/images/ground.png",
