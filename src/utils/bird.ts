@@ -15,221 +15,96 @@ export class Bird extends ex.Actor {
   constructor(private level: Level) {
     super({
       pos: Config.BirdStartPos,
-      radius: 8,
+      radius: 16,
       // rotating box double counts
-      // width: 16,
-      // height: 16,
+      // width: 50,
+      // height: 25,
       color: ex.Color.Yellow,
     });
   }
 
   override onInitialize(): void {
-    this.startSprite = new ex.Sprite({
-      image: Resources.HelicopterImage1,
-      sourceView: {
-        x: 0,
-        y: 0,
-        width: 120,
-        height: 32,
-      },
-    });
+    const CopterSprite = (image: ex.ImageSource) => {
+      return new ex.Sprite({
+        image,
+        sourceView: {
+          x: 0,
+          y: 0,
+          width: 120,
+          height: 32,
+        },
+      });
+    };
+    this.startSprite = CopterSprite(Resources.HelicopterImage1);
     this.upAnimation = new ex.Animation({
       frames: [
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage1,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage1),
+          duration: 5,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage2,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage2),
+          duration: 5,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage3,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage3),
+          duration: 5,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage4,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage4),
+          duration: 5,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage5,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage5),
+          duration: 5,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage6,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage6),
+          duration: 5,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage7,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage7),
+          duration: 5,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage8,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage8),
+          duration: 5,
         },
       ],
     });
     this.downAnimation = new ex.Animation({
       frames: [
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage1,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage1),
+          duration: 60,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage2,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage2),
+          duration: 60,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage3,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage3),
+          duration: 60,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage4,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage4),
+          duration: 60,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage5,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage5),
+          duration: 60,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage6,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage6),
+          duration: 60,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage7,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage7),
+          duration: 60,
         },
         {
-          graphic: new ex.Sprite({
-            image: Resources.HelicopterImage8,
-            sourceView: {
-              x: 0,
-              y: 0,
-              width: 120,
-              height: 32,
-            },
-          }),
-          duration: 10,
+          graphic: CopterSprite(Resources.HelicopterImage8),
+          duration: 60,
         },
       ],
     });
@@ -277,7 +152,7 @@ export class Bird extends ex.Actor {
     );
 
     // The "speed" the bird will move relative to pipes
-    this.rotation = ex.vec(Config.PipeSpeed, this.vel.y / 5).toAngle();
+    this.rotation = ex.vec(Config.PipeSpeed, this.vel.y / 10).toAngle();
 
     if (this.vel.y > 0) {
       this.graphics.use("down");

@@ -8,7 +8,7 @@ export class Pipe extends ex.Actor {
     super({
       pos,
       width: 32,
-      height: 1000,
+      height: 100,
       anchor: type === "bottom" ? ex.vec(0, 0) : ex.vec(0, 1),
       color: ex.Color.Green,
       vel: ex.vec(-Config.PipeSpeed, 0),

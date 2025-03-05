@@ -29,7 +29,7 @@ export const Resources = {
     "/flappy-bird/images/helicopter/helicopter_8.png",
   ),
   PipeImage: new ex.ImageSource(
-    "/flappy-bird/images/brick2.png",
+    "/flappy-bird/images/Brickwall4.png",
     {
       wrapping: ex.ImageWrapping.Repeat,
     },
